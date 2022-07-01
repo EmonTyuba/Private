@@ -4,17 +4,35 @@
 
 <html>
 
-<head>
+    <head>
 
-<meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <link rel="canonical" href="https://syncer.jp/Web/API_Interface/Reference/IDL/Element/insertAdjacentHTML/">
+        <link rel="stylesheet" href="design.css">
+        <title>テストページ</title>
 
-<title>テストページ</title>
+    </head>
 
-</head>
+    <body>
+        <button id="toAjaxPage">Ajaxのページへ</button>
+        <br>
+        <br>
+        <p>これはJavaScript実行用ページです。</p>
+        <p>JavaScriptからHTMLへの書き込み(insertAdjacentHTML)</p>
+        <p>説明を読んでも分かりづらかったので、視覚的に分かるように作製。</p>
+        <ol id="lists">
+            <li>hogehoge</li>
+        </ol>
+        <input type="radio" name="position" value="beforebegin" checked>beforebegin
+        <input type="radio" name="position" value="afterbegin">afterbegin
+        <input type="radio" name="position" value="beforeend">beforeend
+        <input type="radio" name="position" value="afterend">afterend
 
-<body>
-<p>これはJavaScript実行用ページです。</p>
-<script type="text/javascript" src="hello-world.js"></script>
-</body>
+        <div class="button">
+            <button id="insertHTML">insertAdjacentHTML</button>
+        </div>
+
+        <script type="text/javascript" src="hello-world.js"></script>
+    </body>
 
 </html>
