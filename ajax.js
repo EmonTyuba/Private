@@ -11,6 +11,8 @@ document.getElementById("ajax").onclick = function() {
     obj.onreadystatechange = function(){
         if(obj.readyState == 4){
             console.log(obj.responseText);
+            var element = document.getElementById("ajax");
+            element.insertAdjacentHTML("afterend", obj.responseText);
         }
     }
 
