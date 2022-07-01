@@ -24,3 +24,26 @@ document.getElementById("ajax").onclick = function() {
     obj.open("GET", "http://localhost:80");
     obj.send();
 }
+
+document.getElementById("search").onclick = function() {
+    var obj = new XMLHttpRequest();
+    var postNumber = document.getElementById("postNumber").value
+    obj.onreadystatechange = function() {
+        if(obj.readyState == 4){
+            console.log("取得完了。");
+            var element = document.getElementById("search");
+            var jsonObj = JSON.parse(obj.responseText);
+            var data = jsonObj.results
+            
+            document.getElementById("todouhu").value = data[0].address1;
+            document.getElementById("sikuchou").value = data[0].address2;
+            document.getElementById("address").value = data[0].address3;
+        }
+
+        obj.onerror = function() {
+            console.error("エラーが発生しました。");
+        }
+    }
+    obj.open("GET", "https://zip-cloud.appspot.com/api/search?zipcode=" + postNumber);
+    obj.send();
+}
